@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="489.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.createpageController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="460.0" prefWidth="742.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edeeef" height="34.0" layoutX="472.0" layoutY="24.0" stroke="WHITE" strokeType="INSIDE" width="482.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutX="146.0" layoutY="396.0" stroke="BLACK" strokeType="INSIDE" width="227.0" />
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <TextField fx:id="tfname" layoutX="208.0" layoutY="138.0" />
+            <TextField fx:id="tfage" layoutX="209.0" layoutY="242.0" />
+            <TextField fx:id="tfnumber" layoutX="209.0" layoutY="193.0" />
+            <TextField fx:id="tfEmail" layoutX="210.0" layoutY="288.0" />
+            <Label layoutX="114.0" layoutY="142.0" text="NAME" />
+            <Label layoutX="122.0" layoutY="246.0" text="Age" />
+            <Label layoutX="90.0" layoutY="197.0" text="Enrollment Number" />
+            <Label layoutX="119.0" layoutY="292.0" text="E-MAIL" />
+            <Label fx:id="lblout" cache="true" layoutX="162.0" layoutY="400.0" prefHeight="18.0" prefWidth="207.0">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Label>
+            <Button fx:id="btncreate" layoutX="233.0" layoutY="331.0" mnemonicParsing="false" onAction="#createdata" text="Create" />
+            <MenuBar layoutY="-1.0" prefHeight="26.0" prefWidth="955.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Actions">
+                  <items>
+                        <MenuItem fx:id="btngetinfo" mnemonicParsing="false" onAction="#openinfopage" text="Get information" />
+                        <MenuItem fx:id="btnupdate" mnemonicParsing="false" onAction="#openupdatepage" text="Update existing data" />
+                    <MenuItem fx:id="btndelete" mnemonicParsing="false" onAction="#opendeletepage" text="Delete Data" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label layoutX="81.0" layoutY="59.0" text="ENTER THE DETAILS OF THE STUDENT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbdata" layoutX="472.0" layoutY="57.0" prefHeight="431.0" prefWidth="482.0">
+              <columns>
+                <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="colNumber" prefWidth="75.0" text="Enrollment" />
+                  <TableColumn fx:id="colAge" prefWidth="75.0" text="Age" />
+                  <TableColumn fx:id="colEmail" prefWidth="255.99997558593748" text="Email" />
+              </columns>
+            </TableView>
+            <Text layoutX="655.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATABASE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
