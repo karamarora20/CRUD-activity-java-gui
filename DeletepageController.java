@@ -26,7 +26,7 @@ public class DeletepageController extends AppController {
 	public void deletedata(ActionEvent event) {
 		database connectnow= new database();
 		Connection connected= connectnow.getConnection();
-		String sql="Delete from form_entries where number='"+tfNumber.getText()+"'";
+		String sql="Delete from form where number='"+tfNumber.getText()+"'";
 	if(validate_enrollment(event, tfNumber)){
 		try{
 				if(searchdata1(event,tfNumber)) {				

@@ -38,7 +38,7 @@ public class UpdatepageController extends AppController {
 	// Event Listener on Button[#btnupdate].onAction
 	@FXML
 	public void updatedata(ActionEvent event) {
-		String table_name= "form_entries";
+		String table_name= "form";
 		database connectnow= new database();
 		Connection connected= connectnow.getConnection();
 		String sql="UPDATE "+table_name+"\r\n"

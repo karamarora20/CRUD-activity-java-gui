@@ -40,7 +40,7 @@ public class AppController {
 	public void searchdata(ActionEvent event)throws NotFoundException {
 		database connectnow= new database();
 		Connection connected= connectnow.getConnection();
-		String sql="Select * from form_entries where number='"+tfNumber.getText()+"'";
+		String sql="Select * from form where number='"+tfNumber.getText()+"'";
 		try {
 			Statement stmt=connected.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
@@ -73,7 +73,7 @@ public class AppController {
 	public boolean searchdata1(ActionEvent event,TextField N)throws NotFoundException {
 		database connectnow= new database();
 		Connection connected= connectnow.getConnection();
-		String sql="Select * from form_entries where number='"+N.getText()+"'";
+		String sql="Select * from form where number='"+N.getText()+"'";
 		try {
 			Statement stmt=connected.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);

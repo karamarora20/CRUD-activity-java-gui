@@ -64,7 +64,7 @@ public class createpageController extends AppController implements Initializable
 		showdata(event);
 		database connectnow= new database();
 		Connection connected= connectnow.getConnection();
-		String sql="Insert into form_entries values ('"+tfname.getText().toUpperCase()+"','"+tfage.getText()+"','"+tfnumber.getText().toUpperCase()+"','"+tfEmail.getText()+"')";
+		String sql="Insert into form values ('"+tfname.getText().toUpperCase()+"','"+tfage.getText()+"','"+tfnumber.getText().toUpperCase()+"','"+tfEmail.getText()+"')";
 		if(validate_age(event, tfage) && validate_email(event, tfEmail) && validate_enrollment(event, tfnumber) && validate_name(event, tfname)) 
 		{
 			try {
@@ -72,8 +72,11 @@ public class createpageController extends AppController implements Initializable
 			java.sql.Statement stmt=connected.createStatement();
 			stmt.execute(sql);
 			lblout.setText("success");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
+			if(e.getSQLState().equals("23000"))
+				lblout.setText("enrollment number alreafy in use");
+			else
+				e.printStackTrace();
 		}}
 		else lblout.setText("please enter correct values");
 		
@@ -142,7 +145,7 @@ try {
 		// TODO Auto-generated method stub
 		try{database connectnow= new database();
 		Connection connected= connectnow.getConnection();
-		String sql= "Select * from form_entries";
+		String sql= "Select * from form";
 		Statement stmt=connected.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		while(rs.next()) {
